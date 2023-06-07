@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/models/Category.interface';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -11,12 +12,14 @@ export class CategoriesComponent implements OnInit {
   category: string[] = []
   displayedColumns: string[] = ['name', 'view'];
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private router: Router) {}
 
   ngOnInit(): void {
     this.productService.getCategories().subscribe(categories => this.category = categories)
-    // console.log(this.category);
-    
+  }
+
+  goToSingleCategory(category: string) {
+    this.router.navigate(['categories', category])
   }
 
 

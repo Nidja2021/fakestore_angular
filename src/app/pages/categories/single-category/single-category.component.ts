@@ -16,9 +16,9 @@ export class SingleCategoryComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.categoryName = params['categoryName']
+      console.log(this.categoryName);
+      
       this.productService.getCategoryProducts(this.categoryName).subscribe(products => this.categoryProducts = products)
     })
   }
-
-
 }
