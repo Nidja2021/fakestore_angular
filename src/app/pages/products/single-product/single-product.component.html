@@ -1,0 +1,15 @@
+<div class="single-product">
+    <div class="product-img">
+        <img mat-card-image src={{product.image}} alt={{product.title}}>
+    </div>
+    <div class="product-info">
+        <h1>{{product.title}}</h1>
+        <h4><strong>Category: </strong>{{product.category}}</h4>
+        <h4><strong>Price: </strong>$ {{product.price}}</h4>
+        <h4><strong>Rate: </strong>{{product.rating.rate}}</h4>
+        <h4><strong>Count: </strong>{{product.rating.count}}</h4>
+        <p>{{product.description}}</p>
+
+        <button mat-button class="product-button">Buy it</button>
+    </div>
+</div>
