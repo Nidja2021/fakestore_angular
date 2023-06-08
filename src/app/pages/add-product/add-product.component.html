@@ -1,1 +1,25 @@
-<p>add-product works!</p>
+<h1>New Product</h1>
+
+<form class="form" (submit)="createProduct($event)">
+    <mat-form-field class="form-field">
+        <mat-label>Product title</mat-label>
+        <input type="text" matInput  placeholder="Ex. Laptop ASUS" [(ngModel)]="product.title" name="title">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Product price</mat-label>
+            <input type="number" matInput  placeholder="Ex. 1500" [(ngModel)]="product.price" name="price">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+            <mat-label>Product description</mat-label>
+            <input type="text" matInput  placeholder="Ex. Laptop is awesome" [(ngModel)]="product.description" name="description">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Product image</mat-label>
+        <input type="text" matInput  placeholder="Enter image url" [(ngModel)]="product.image" name="image">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+            <mat-label>Product category</mat-label>
+            <input type="text" matInput  placeholder="Ex. electronic" [(ngModel)]="product.category" name="category">
+    </mat-form-field>
+    <button mat-stroked-button class="form-btn" type="submit">Submit</button>    
+  </form>

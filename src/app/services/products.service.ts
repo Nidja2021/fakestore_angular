@@ -27,4 +27,22 @@ export class ProductsService {
   getCategoryProducts(categoryName: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.url}/category/${categoryName}`)
   }
+
+  createProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.url, product)
+  }
+
 }
+
+// {
+//   method: "POST",
+//   body: JSON.stringify(
+//     {
+//       title: product.title,
+//       price: product.price,
+//       description: product.description,
+//       image: product.image,
+//       category: product.category
+//     }
+//   )
+// }
